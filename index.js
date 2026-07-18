@@ -2,9 +2,13 @@ import express from 'express';
 import sequelize from './config/db.js'; 
 import { User, Data } from './models/stumodels.js';
 import stuRoutes from './routes/sturoutes.js'
-
+import cors from "cors";
 
 const app = express();
+app.use(cors({
+     origin: ["http://localhost:5173", "https://student-frontend-alpha-lyart.vercel.app/"],
+     credentials: true      
+}));
 const PORT = process.env.PORT || 5001;
 
 app.use(express.json());

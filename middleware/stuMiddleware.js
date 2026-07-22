@@ -8,7 +8,7 @@ export const verifyToken = (req, res, next) => {
             message:"Token Missing"
         }); 
     }
-
+    
     const token = authHeader.split(" ")[1];
 
     try {
